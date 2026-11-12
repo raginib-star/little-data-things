@@ -1,0 +1,586 @@
+
+/* 1. Website colours */
+
+:root {
+    --cream: #FBF7F0;
+    --text: #493E4D;
+    --muted: #817483;
+    --pink: #F4CEDC;
+    --lavender: #DCD0F5;
+    --sage: #DFEBDD;
+    --peach: #F8DFD3;
+    --yellow: #F8EDC9;
+    --coral: #EF886F;
+}
+
+/* 2. Basic page styling */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 3. Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #805E78;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--coral);
+}
+
+/* 4. Welcome section */
+
+.hero {
+    text-align: center;
+    padding: 110px 20px 125px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #B47D91;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.5;
+    letter-spacing: -2px;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #A27EAB;
+}
+
+.hero-description {
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+.primary {
+    background: var(--lavender);
+}
+
+.secondary {
+    background: var(--peach);
+}
+
+.hero-note {
+    margin-top: 50px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* 5. Journal and project sections */
+
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 55px 25px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    margin: 5px 0;
+}
+
+.section-heading > p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 35px;
+    border-radius: 22px;
+    min-height: 290px;
+    transition: transform 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.lavender { background: var(--lavender); }
+.sage { background: var(--sage); }
+.peach { background: var(--peach); }
+.yellow { background: var(--yellow); }
+
+.card-icon {
+    font-size: 30px;
+}
+
+.card-category {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.card h3 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.card > p:not(.card-category) {
+    color: #685D6A;
+    font-size: 14px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 6. About section */
+
+.about-section {
+    max-width: 750px;
+    margin: 100px auto;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 40px;
+}
+
+.about-section > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+/* 7. Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 8%;
+    border-top: 1px solid #E8DEE5;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* 8. Mobile-friendly layout */
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+}
+
+/* 9. Typography */
+
+h1, h2, h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+}
+
+.logo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+}
+
+/* 10. Homepage heading highlight */
+
+
+.highlight-text {
+    color: #805E96;
+    background-color: #F4CEDC;
+    padding: 4px 16px;
+    border-radius: 12px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+
+/* 11. Homepage entrance animation */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero {
+        animation: none;
+    }
+}
+
+/* 12. Homepage decorations */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.decoration {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+}
+
+.star-one {
+    top: 15%;
+    left: 12%;
+    font-size: 38px;
+    color: #E9A65C;
+}
+
+.flower-one {
+    top: 58%;
+    right: 12%;
+    font-size: 45px;
+    color: #D997AE;
+}
+
+.sparkle-one {
+    top: 30%;
+    right: 18%;
+    font-size: 28px;
+    color: #A7BDA4;
+}
+
+.star-two {
+    bottom: 15%;
+    left: 20%;
+    font-size: 30px;
+    color: #B3A1D5;
+}
+
+/* Smaller decorations on mobile */
+
+@media (max-width: 650px) {
+    .decoration {
+        font-size: 20px;
+        opacity: 0.6;
+    }
+
+    .star-one {
+        left: 5%;
+    }
+
+    .flower-one {
+        right: 5%;
+    }
+
+    .sparkle-one {
+        right: 7%;
+    }
+
+    .star-two {
+        left: 8%;
+    }
+}
+
+/* 13. Floating decorations */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.decoration {
+    animation: float 4s ease-in-out infinite;
+}
+
+.flower-one {
+    animation-delay: 1s;
+}
+
+.sparkle-one {
+    animation-delay: 2s;
+}
+
+.star-two {
+    animation-delay: 1.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .decoration {
+        animation: none;
+    }
+}
+
+
+/* 14. Journal card design */
+
+.journal-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+}
+
+.journal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.journal-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.journal-date {
+    font-size: 10px;
+    color: #776B7B;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 6px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.journal-illustration {
+    font-size: 55px;
+    color: rgba(120, 90, 130, 0.45);
+    margin: 25px 0 5px;
+    line-height: 1;
+}
+
+.journal-card h3 {
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.journal-card > p {
+    max-width: 360px;
+}
+
+.journal-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 25px;
+    font-size: 12px;
+    color: #6C6070;
+}
+
+.journal-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* 15. Scrapbook tape effect */
+
+.journal-card::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 45%;
+    width: 65px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.45);
+    transform: rotate(-5deg);
+    border-radius: 2px;
+}
+
+.journal-card:nth-child(2)::before {
+    transform: rotate(6deg);
+}
+
+/* 16. Journal arrow hover animation */
+
+.journal-arrow {
+    transition: transform 0.25s ease;
+}
+
+.journal-card:hover .journal-arrow {
+    transform: translate(3px, -3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journal-arrow {
+        transition: none;
+    }
+}
+
+
+/* 17. Individual journal pages */
+
+.entry-page {
+    max-width: 800px;
+    margin: 60px auto 100px;
+    padding: 0 25px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 60px;
+    font-size: 14px;
+    color: #A27EAB;
+}
+
+.back-link:hover {
+    color: var(--coral);
+}
+
+.entry-page h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.entry-date {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 50px;
+}
+
+.entry-content {
+    background: #FFFFFF;
+    padding: 45px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(80, 60, 80, 0.05);
+}
+
+.entry-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #665D69;
+}
+
+.entry-content h2 {
+    font-size: 27px;
+    margin-top: 35px;
+}
+
+@media (max-width: 650px) {
+    .entry-page {
+        margin-top: 35px;
+    }
+
+    .entry-content {
+        padding: 25px;
+    }
+}
